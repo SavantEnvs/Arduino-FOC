@@ -1,0 +1,10 @@
+project: savantenvs/Arduino-FOC
+target: fuzz_motor_loop
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_motor_loop/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_motor_loop
+    libfuzzer: true
+    timeout: 5
+

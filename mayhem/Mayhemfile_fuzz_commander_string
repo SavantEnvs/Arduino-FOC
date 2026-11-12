@@ -1,0 +1,11 @@
+project: savantenvs/Arduino-FOC
+target: fuzz_commander_string
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_commander_string/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_commander_string
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz_commander_string/fuzz_commander_string.dict
+
